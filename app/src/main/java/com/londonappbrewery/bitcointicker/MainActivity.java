@@ -24,11 +24,8 @@ import cz.msebera.android.httpclient.Header;
 
 public class MainActivity extends AppCompatActivity {
 
-    // Constants:
-    // TODO: Create the base URL
     private final String BASE_URL = " https://apiv2.bitcoinaverage.com/indices/global/ticker/BTC";
 
-    // Member Variables:
     TextView mPriceTextView;
     private String money;
     private String URL;
@@ -41,17 +38,13 @@ public class MainActivity extends AppCompatActivity {
         mPriceTextView = (TextView) findViewById(R.id.priceLabel);
         Spinner spinner = (Spinner) findViewById(R.id.currency_spinner);
 
-        // Create an ArrayAdapter using the String array and a spinner layout
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
                 R.array.currency_array, R.layout.spinner_item);
 
-        // Specify the layout to use when the list of choices appears
+
         adapter.setDropDownViewResource(R.layout.spinner_dropdown_item);
 
-        // Apply the adapter to the spinner
         spinner.setAdapter(adapter);
-
-        // TODO: Set an OnItemSelected listener on the spinner
 
         spinner.setOnItemSelectedListener(new OnItemSelectedListener() {
             @Override
@@ -69,7 +62,6 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    // TODO: complete the letsDoSomeNetworking() method
     private void letsDoSomeNetworking(String url) {
 
         AsyncHttpClient client = new AsyncHttpClient();
